@@ -16,7 +16,7 @@ const port = process.env.PORT || 3000;
 const databaseUrl = process.env.DATABASE_URL;
 
 // Middleware
-app.use(logger('dev')); // Logging request details
+app.use(logger('common')); // Logging request details
 app.use(methodOverride('_method')); // Support for method override
 app.use(cookieParser()); // Parsing cookies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded payloads
@@ -24,7 +24,7 @@ app.use(express.json()); // Parse JSON payloads
 
 // Configure CORS
 const corsOptions = {
-  origin: 'https://mfapp-ten.vercel.app', // Ganti dengan domain web Flutter Anda
+  origin: 'http://mf-api.stas-rg.com', // Ganti dengan domain web Flutter Anda
   methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true, // Jika menggunakan cookie atau authorization
